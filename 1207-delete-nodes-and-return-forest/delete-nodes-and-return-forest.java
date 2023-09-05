@@ -15,7 +15,6 @@
  */
 class Solution {
     public List<TreeNode> delNodes(TreeNode root, int[] to_delete) {
-        
         List<TreeNode> ansList = new ArrayList<>();
         Set<Integer> toDelete = new HashSet<>();
         for(int del: to_delete) toDelete.add(del);
@@ -33,7 +32,7 @@ class Solution {
         root.left = removeNodes(root.left, ansList, toDelete);
         root.right = removeNodes(root.right, ansList, toDelete);
         if(toDelete.contains(root.val)) {
-            System.out.println("Deleting : "+ root.val);
+            //System.out.println("Deleting : "+ root.val);
             if(root.left != null) ansList.add(root.left);
             if(root.right != null) ansList.add(root.right);
             return null;
