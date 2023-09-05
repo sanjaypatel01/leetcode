@@ -19,9 +19,10 @@ class Solution {
         Set<Integer> toDelete = new HashSet<>();
         for(int del: to_delete) toDelete.add(del);
         removeNodes(root, ansList, toDelete);
-        if(!toDelete.contains(root.val)){
+       // If root is not in delete list, then add root also in remaining list.
+       if(!toDelete.contains(root.val)){
             ansList.add(root);
-        }
+        } 
 
         return ansList;
     }
@@ -32,7 +33,7 @@ class Solution {
         root.left = removeNodes(root.left, ansList, toDelete);
         root.right = removeNodes(root.right, ansList, toDelete);
         if(toDelete.contains(root.val)) {
-            //System.out.println("Deleting : "+ root.val);
+            //Adding left and right childs as remaining from target nodes.
             if(root.left != null) ansList.add(root.left);
             if(root.right != null) ansList.add(root.right);
             return null;
