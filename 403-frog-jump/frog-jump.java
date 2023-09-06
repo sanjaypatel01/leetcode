@@ -20,6 +20,7 @@ class Solution {
         if(index == stones.length-1) {
             return true;
         }
+        //No need to calculate in last stone.
         if(index >= stones.length-1) return true;
         
         if(dp[index][prev] != -1) return dp[index][prev] == 1 ? true : false;
