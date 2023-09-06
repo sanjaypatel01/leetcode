@@ -20,7 +20,7 @@ class Solution {
         if(index == stones.length-1) {
             return true;
         }
-        if(index >= stones.length) return true;
+        if(index >= stones.length-1) return true;
         
         if(dp[index][prev] != -1) return dp[index][prev] == 1 ? true : false;
         
