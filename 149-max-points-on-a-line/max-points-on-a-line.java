@@ -14,6 +14,7 @@ class Solution {
                 if(p1[0] == p2[0]) {
                     slope = Integer.MAX_VALUE;
                 } else {
+                    // Make sure to convert integer to double
                     slope = (p1[1] - p2[1]) * 1.0 /(p1[0] - p2[0]);
                 }
                 map.put(slope, map.getOrDefault(slope, 0) + 1);                
