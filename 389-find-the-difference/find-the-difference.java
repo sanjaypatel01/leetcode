@@ -11,12 +11,21 @@ class Solution {
         return '!';
     }*/
 
-    public char findTheDifference(String s, String t) {
+   /* public char findTheDifference(String s, String t) {
        char ans = 0; 
         for(int i=0; i < t.length(); i++) {
             if(i < s.length()) ans ^=s.charAt(i);
             ans ^=t.charAt(i);
         }
         return ans;
+    } */
+
+    public char findTheDifference(String s, String t) {
+        int diff = 0; 
+        for(int i=0; i < t.length(); i++) {
+            if(i < s.length()) diff -= s.charAt(i);
+            diff += t.charAt(i);
+        }
+        return (char)diff;
     }
 }
